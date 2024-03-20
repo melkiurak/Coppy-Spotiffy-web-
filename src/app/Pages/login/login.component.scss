@@ -1,0 +1,89 @@
+.Login-container {
+    display: flex;
+    color: #fff;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    width: 400px;
+    margin: 0 auto;
+    // .Login-container__form
+    &__account{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        form{
+            input{
+                padding: 0 0 0 10px;
+                color: #fff;
+                height: 30px;
+                border-radius: 5px;
+                background-color: rgba(255, 255, 255, 0);
+                border: 1px solid white ;
+            }
+        }
+	}
+    &__btn{
+        color: #fff;
+        padding: 0 15px;
+        background-color: green;
+        border: 1px solid white;
+        border-radius: 50px;
+        height: 50px;
+        font-size: 20px;
+        border: none;
+    }
+}
+.Login__form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+::ng-deep app-sidebar,app-home-info{
+    display: none;
+}

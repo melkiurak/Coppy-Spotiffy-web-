@@ -1,0 +1,24 @@
+<div class="playlist">
+    @if (spotifyPlaylist$ | async; as playlist) {
+        <div class="playlist-name" >
+                <img class="playlist-name__img"  [src]="playlist.images[0].url" alt="{{ playlist.name }}">
+                <div class="playlist-name__info">
+                    <h2>{{ playlist.name }}</h2>
+                    <p>{{playlist.description}}</p>
+                    <p>Кількість треків:{{playlist.tracks.total}}</p>
+                </div>
+        </div>
+        <div class="playlist-track" *ngFor="let track of playlist.tracks.items; let i = index">
+            <div class="playlist-track__info">
+                <p>{{i + 1}}</p>
+                <img  [src]="track.track.album.images[0].url">
+                <p> {{ track.track.name }} - {{ track.track.artists[0].name }}</p>        
+            </div>
+            <div class="playlist-track__meta">
+                <fa-icon [icon]="heart"></fa-icon>
+                <fa-icon [icon]="bookmark"></fa-icon>
+                <p>{{track.track.duration_ms | mypipe }}</p>
+            </div>
+        </div>
+    }
+</div>

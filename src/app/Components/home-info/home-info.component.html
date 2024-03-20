@@ -1,0 +1,27 @@
+<div class="home-info">
+    <section class="popular-section__playlist">
+        <h2>Підбір популярних плейлистів</h2>
+       <div class="playlists">
+            @if (spotifyPlaylist$ | async; as playlists) {
+                <div class="top-playlists" *ngFor="let playlist of playlists.playlists.items">
+                    <a [routerLink]="['playlist', playlist.id]">
+                        <img class="top-playlists__img" [src]="playlist.images[0].url" alt="{{ playlist.name}}">
+                        <h3 class="top-playlists__name">{{ playlist.name }}</h3>
+                        <p class="top-playlists__info"></p>
+                    </a>
+                </div>
+            }
+       </div>
+    </section>
+    <section class="new-section__release">
+        <h2>Нові релізи</h2>
+        <div class="release">
+            @if (Releases$ | async; as releases) {
+                <div class="new-release" *ngFor="let release of releases.albums.items">
+                    <img class="new-release__img" [src]="release.images[0].url" alt="{{release.name}}">
+                    <h3 class="new-release__title">{{release.name}}</h3>
+                </div>
+            }
+        </div>
+    </section>
+</div>

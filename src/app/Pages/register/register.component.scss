@@ -1,0 +1,109 @@
+.register {
+    // .register-container
+    &-container{
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 15%;
+        margin: 0 auto;
+        flex-direction: column;
+        gap: 20px;
+        &__form{
+            display: flex;
+            gap: 5px;
+            flex-direction: column;
+            width: 100%;
+            input{
+                padding: 0 0 0 10px;
+                color: #fff;
+                height: 30px;
+                border-radius: 5px;
+                background-color: rgba(255, 255, 255, 0);
+                border: 1px solid white ;
+            }
+        }
+        &__btn{
+            color: #fff;
+            width: 100%;
+            height: 40px;
+            background-color: green;
+            border: none;
+            border-radius: 20px;
+        }
+        &__social{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            
+        }
+    }
+    // .register__title
+    &__title {
+        color: #fff;
+        text-align: center;
+        font-size: 34px;
+    }
+}
+.social__btn{
+    color: #fff;
+    padding: 0 15px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid white;
+    border-radius: 50px;
+    height: 50px;
+    font-size: 20px;
+}
+.Register__form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.back__btn{
+    font-size: 23px;
+    width: 0;
+    float: left;
+    background-color: transparent;
+    border: none;
+    color: #E8E8E8ED;
+}
+.date-input{
+    display: flex;
+    padding-top: 10px;
+    gap: 10px;
+    &__day{
+        inline-size: 30%;
+    }
+    &__select{
+        inline-size: 100%;
+        select{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &__year{
+        inline-size: 50%;
+    }
+}
+
+.Gender-pick {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+		// .Gender-pick__radio
+		&__radio {
+            display: flex;
+            align-items: center;
+            input{
+                border: 1px solid #E8E8E8ED;
+                background-color: red;
+                width: 20px; 
+                height: 20px; 
+            }
+		}
+}
+::ng-deep app-sidebar,app-home-info{
+    display: none;
+}

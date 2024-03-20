@@ -1,0 +1,46 @@
+.sidebar {
+    float: left;
+}
+.sidebar-menu {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    min-height: 100vh;
+    &__navigation {
+        background-color: #282b29;
+        flex-grow: 1;
+    }
+}
+.navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    &-link{
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        color: #E8E8E8ED;
+        span{
+            margin-right: 30px;
+        }
+        &__item{
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            fa-icon{
+                font-size: 22px;
+            }
+            span{
+                font-size: 18px;
+            }
+        }
+        &__btn{
+            background-color: transparent;
+            border: none;
+            color: #E8E8E8ED;
+            fa-icon{
+                font-size: 18px;
+            }
+        }
+    }
+}

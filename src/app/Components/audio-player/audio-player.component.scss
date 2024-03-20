@@ -1,0 +1,37 @@
+.audio {
+    height: 200px;
+    display: flex;
+    justify-content: space-between; /* разместить по вертикали по центру */
+    align-items: center; /* разместить по горизонтали по центру */
+    background-color: #282b29;
+    padding: 0 30px;
+    // .audio__btn
+    fa-icon{
+        color: #fff;
+    }
+    &__btn {
+        display: flex;
+        gap: 10px;
+    }
+    
+    // .audio__sound
+    
+    &__sound {
+    }
+}
+.audio-name {
+}
+.audio-player {
+    // .audio-player__controls
+    &__controls {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        button {
+            width: 32px;
+            height: 32px;
+            background-color: transparent;
+            border: none; /* Опционально: убираем границу кнопки */
+        }
+    }
+}

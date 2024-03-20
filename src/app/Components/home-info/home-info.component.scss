@@ -1,0 +1,140 @@
+home-info{
+    margin-top: 20px;
+    width: 100%;
+    height: auto;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    &__search{
+        display: flex;
+        gap: 10px;
+        width: 75%;
+        align-items: center;
+        height: 100px;
+    }
+}
+.search-form {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    height: 40px;
+    position: relative;
+    input{
+        width: 100%;
+        height: 100%;
+        padding-left: 10px;
+        color: #fff;
+        box-sizing: border-box;
+        border-radius: 50px;
+        outline: none;
+        border: 1px solid #3d403e;
+        background-color: #282b29;
+        font-size: 16px;
+    }
+    
+}
+.search-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    height: 100%;
+    width: 6%;
+    gap: 10px;
+    background-color: #282b29;
+    border: 1px solid #3d403e;
+    color: #fff;
+}
+.search-results {
+    position: absolute; /* Позиционирование абсолютное */
+    top: 12%;
+    z-index: 1000; /* Поднимаем поверх других элементов */
+    background-color: #fff; /* Цвет фона */
+    border: 1px solid #ccc; /* Граница */
+    border-radius: 4px; /* Закругленные углы */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень */
+    padding: 8px 0; /* Внутренние отступы */
+    width: 15%;
+    height: auto;
+    overflow-y: auto; /* Включаем вертикальную прокрутку */
+    display: none; /* По умолчанию скрыт */
+}
+.search-results ul {
+    list-style: none; /* Убираем маркеры списка */
+    padding: 0; /* Убираем внутренние отступы */
+    margin: 0; /* Убираем внешние отступы */
+}
+.search-results li {
+    padding: 8px 16px; /* Внутренние отступы */
+    cursor: pointer; /* Курсор указывает на возможность взаимодействия */
+}
+.search-results li:hover {
+    background-color: #f0f0f0; /* Изменение фона при наведении */
+}
+.show-search-results {
+    display: block;
+}
+.filter {
+    position: absolute;
+    top: 0;
+    right: 1%;
+    height: 100%;
+}
+.filter-btn {
+    color: #fff;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    width: 90px;
+    justify-content: space-between;
+    height: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+//-----------------------------Топ плейлистов------------------------------------------------------------------------------//
+.popular-section__playlist{
+    color: #fff;
+}
+.playlists {
+   display: grid;
+   grid-template-columns: repeat(10, 1fr);
+}
+.top-playlists {
+    width: 170px;
+		// .top-playlists__img
+		&__img {
+        width: 100%;
+		}
+		// .top-playlists__name
+		&__name {
+        margin: 0;
+		}
+		// .top-playlists__info
+		&__info {
+            margin: 0;
+            font-size: 12px;
+		}
+}
+//-----------Новые релизы-------------------------------------------------------------------------------------------------//
+.new-section__release{
+    color: #fff;
+}
+.release {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+}
+.new-release {
+    width: 170px;
+
+		// .new-release__img
+		&__img {
+        width: 100%;
+
+		}
+		// .new-release__title
+		&__title {
+		}
+}

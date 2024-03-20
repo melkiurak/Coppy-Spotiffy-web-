@@ -1,0 +1,49 @@
+<div class="sidebar">
+    <nav class="sidebar-menu">
+        <div class="sidebar-menu__navigation">
+            <ul class="navigation">
+                <li class="navigation-link">
+                    <a  class="navigation-link__item">
+                        <fa-icon [icon]="faHouse"></fa-icon>
+                        <span>Головна</span>
+                    </a>
+                </li>
+                <li class="navigation-link">
+                    <a routerLink="/register" routerLinkActive="active" ariaCurrentWhenActive="page"  class="navigation-link__item">
+                        <fa-icon [icon]="faUser"></fa-icon>
+                        <span>Створити аккаунт</span>
+                    </a>
+                </li>
+                <li class="navigation-link">
+                    <a routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page"  class="navigation-link__item">
+                        <fa-icon [icon]="faKey"></fa-icon>
+                        <span>Увійти в аккаунт</span>
+                    </a>
+                </li>
+                <li class="navigation-link">
+                    <a routerLink="/search" routerLinkActive="active" ariaCurrentWhenActive="page" class="navigation-link__item">
+                        <fa-icon [icon]="fasearch"></fa-icon>
+                       <span>Пошук</span>
+                    </a>
+                </li>
+                <li class="navigation-link">
+                    <a class="navigation-link__item" href="">
+                        <fa-icon [icon]="faLibrary"></fa-icon>
+                        <span>Створити свій плейліст</span>
+                    </a>
+                    <span class="navigation-link">
+                        <button class="navigation-link__btn">
+                            <fa-icon [icon]="faPlus"></fa-icon>
+                        </button>
+                    </span>
+                </li>
+                <li class="navigation-link">
+                    <a class="navigation-link__item" href="">
+                        <fa-icon [icon]="faGear"></fa-icon>
+                       <span>Настройки</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div> 

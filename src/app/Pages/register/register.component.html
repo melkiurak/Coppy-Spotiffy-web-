@@ -1,0 +1,98 @@
+<main class="register">
+    <div class="register-container">
+        <h1 *ngIf="!hideElement" class="register__title">Зареєструйтеся, щоб почати слухати найкращі пісні</h1>
+        <mat-progress-bar mode="determinate" [value]="progress"></mat-progress-bar>
+        <form [formGroup]="registerForm" novalidate  class="register-container__form">
+            <span *ngIf="CurrentStep >= 1">Шаг {{ CurrentStep }} із {{ totalStep }}</span>
+            <div class="Register__form" *ngIf="CurrentStep  == 1">
+                <label>Адреса електронної пошти</label>
+                <input type="email"   formControlName="userEmail" placeholder="name@gmail.com" required email >
+                @if(registerForm.controls["userEmail"].invalid && registerForm.controls["userEmail"].touched){
+                    <div class="alert">Неправильна вказана пошта</div>
+                }
+            </div>
+            <div class="Register__form" *ngIf="CurrentStep == 2">
+                <button (click)="BackStep()" class="back__btn">
+                    <fa-icon [icon]="arrowleft"></fa-icon>
+                </button>
+                <label>Введіть пароль</label>
+                <input type="password" formControlName="userPassword" required password >
+                @if(registerForm.controls["userPassword"].invalid && registerForm.controls["userPassword"].touched){
+                    <div class="Password__chek" [ngClass]="{'valid': registerForm.controls['userPassword'].valid}">
+                        <li [ngClass]="{ 'valid': isUppercasePresent(), 'alert': !isUppercasePresent() }">Пароль повинен містити заглавні букви</li>
+                        <li [ngClass]="{ 'valid': isNumberPresent(), 'alert': !isNumberPresent() }">Пароль повинен містити цифру</li>
+                        <li [ngClass]="{ 'valid': isLengthPresent(), 'alert': !isLengthPresent() }">Пароль повинен містити мінімум 8 символів</li>
+                    </div>
+                }
+            <button  type="submit" [disabled]="registerForm.controls['userPassword'].invalid" (click)="NextStep()" class="register-container__btn" >Далі</button>
+            </div>
+            <div class="Register__form" *ngIf="CurrentStep == 3">
+                <button (click)="BackStep()" type="submit" (click)="BackStep()" class="back__btn">
+                    <fa-icon [icon]="arrowleft"></fa-icon>
+                </button>
+                <label>Введіть імя акаунта</label>
+                <input  type="text" formControlName="userName" required text>
+                @if(registerForm.controls["userName"].invalid && registerForm.controls["userName"].touched){
+                    <div class="alert">Введіть будь ласка им'я</div>
+                }
+                <div class="date">
+                    <label>Дата народження</label>
+                    <div class="date-input">
+                        <input class="date-input__day" type="text" placeholder="дд" formControlName="userDay" required>
+                        <div class="date-input__select">
+                            <select formControlName="userMonth">
+                                <option disabled selected>Місяць</option>
+                                <option value="1">Січень</option>
+                                <option value="2">Лютий</option>
+                                <option value="3">Березень</option>
+                                <option value="4">Квітень</option>
+                                <option value="5">Травень</option>
+                                <option value="6">Червень</option>
+                                <option value="7">Липень</option>
+                                <option value="8">Серпень</option>
+                                <option value="9">Вересня</option>
+                                <option value="10">Жовтень</option>
+                                <option value="11">Листопад</option>
+                                <option value="12">Грудень</option>
+                            </select>
+                        </div>
+                        <input class="date-input__year" type="text" placeholder="pppp" formControlName="userYear" required>
+                    </div>
+                    @if(registerForm.controls["userDay"].invalid &&  registerForm.controls["userDay"].touched){
+                        <div class="alert">Введіть будь ласка дату </div>
+                    }
+                    @if(registerForm.controls["userMonth"].invalid &&  registerForm.controls["userMonth"].touched){
+                        <div class="alert">Введіть будь ласка місяць</div>
+                    }
+                    @if(registerForm.controls["userYear"].invalid &&  registerForm.controls["userYear"].touched){
+                        <div class="alert">Введіть будь ласка рік</div>
+                    }
+                </div>
+                <div class="Gender">
+                    <label>Стать</label>
+                    <div class="Gender-pick">
+                        <div class="Gender-pick__radio">
+                            <input name="userGender" type="radio" formControlName="userGender" required value="men">
+                            <label>Чоловічий</label>
+                        </div>
+                        <div class="Gender-pick__radio">
+                            <input name="userGender" type="radio" formControlName="userGender" required value="women">
+                            <label>Жіночий</label>
+                        </div>
+                        <div class="Gender-pick__radio">
+                            <input name="userGender" type="radio" formControlName="userGender" required value="хуй знает">
+                            <label>Небінарна</label>
+                        </div>
+                        <div class="Gender-pick__radio">
+                            <input name="userGender" type="radio" formControlName="userGender" required value="пошил нахуй">
+                            <label>Не хочу вказувати</label>
+                        </div>
+                    </div>
+                </div>
+                <button type="button"  (click)="submitForm()" [disabled]="registerForm.controls['userName'].invalid || registerForm.controls['userDay'].invalid || registerForm.controls['userMonth'].invalid || registerForm.controls['userYear'].invalid || registerForm.controls['userGender'].invalid" class="register-container__btn">Зарегистрироваться</button>
+            </div>
+        </form>
+        <button *ngIf="!hideElement" type="button" [disabled]="registerForm.controls['userEmail'].invalid" (click)="NextStep()" class="register-container__btn" >Далі</button>
+        <span *ngIf="!hideElement">Уже маєте акаунт?<a href="#">Увійдіть тут </a></span>
+    </div>
+</main>

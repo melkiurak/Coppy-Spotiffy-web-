@@ -1,0 +1,22 @@
+<div class="Login">
+    <div class="Login-container">
+        <h1>Увійти в акаунт</h1>
+        <div class="Login-container__account">
+            <form [formGroup]="loginForm" (ngSubmit)="Entry()"> 
+                <div class="Login__form">
+                    <label>Введіть електрону пошту</label>
+                    <input type="email" formControlName="userLoginEmail">
+                    @if(loginForm.controls['userLoginEmail'].invalid && loginForm.controls['userLoginEmail'].touched){
+                        <div class="alert">Будь ласка, введіть пошту</div>
+                    }
+                    <label>Введіть пароль</label>
+                    <input type="password" formControlName="userLoginPassword">
+                    @if(loginForm.controls['userLoginPassword'].invalid && loginForm.controls['userLoginPassword'].touched){
+                        <div class="alert">Будь ласка, введіть пароль</div>
+                    }
+                </div>
+            </form>
+            <button type="Entry" [disabled]="loginForm.invalid" class="Login-container__btn" >Увійти</button>
+        </div>
+    </div>
+</div>

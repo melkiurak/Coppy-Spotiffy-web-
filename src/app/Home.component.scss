@@ -1,0 +1,31 @@
+.main-container{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    gap: 12px;
+}
+.sidebar {
+    flex: 0 0 auto; /* Фиксируем ширину бокового меню */
+    width: 200px; /* Устанавливаем желаемую ширину бокового меню */
+}
+
+.content {
+    flex: 1; /* Растягиваем контент, чтобы он занимал оставшееся пространство */
+}
+
+.home{
+    display: flex;
+    gap: 20px;
+    position: relative;
+}
+app-sidebar {
+    flex: 0 0 auto; /* Сайдбар будет занимать минимальное доступное место */
+}
+app-audio-player{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+.main{
+    flex: 1;
+}

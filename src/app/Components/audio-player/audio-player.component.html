@@ -1,0 +1,17 @@
+<div class="audio">
+    <div class="audio-name"></div>
+    <div class="audio-player">
+        <div class="audio-player__controls">
+            <button><fa-icon [icon]="random" size="2x"></fa-icon></button>
+            <button><fa-icon [icon]="prev" size="2x"></fa-icon></button>
+            <button><fa-icon [icon]="play" size="2x"></fa-icon></button>
+            <button><fa-icon [icon]="pause" size="2x"></fa-icon></button>
+            <button><fa-icon [icon]="next" size="2x"></fa-icon></button>
+            <button><fa-icon [icon]="repeat" size="2x"></fa-icon></button>
+        </div>
+    </div>
+    <div class="audio-sound">
+        <fa-icon [icon]="music"></fa-icon>
+        <input type="range" min="0" max="100" value="50">
+    </div>
+</div>

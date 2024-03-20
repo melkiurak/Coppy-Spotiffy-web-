@@ -1,0 +1,53 @@
+.container__playlist{
+display: flex;
+gap: 20px;
+}
+.playlist{
+    overflow-y: auto;
+    height: 100vh;
+    color: #fff;
+    &-name{
+        display: flex;
+        align-items: center;
+        margin-bottom: 50px;
+        gap: 20px;
+        &__img{
+            border-radius: 25px;
+            width: 350px;
+            height: 350px;
+        }
+        &__info{
+            color: #fff;
+        }
+    }
+    &-track{
+        height: 70px;
+        border-radius: 15px;
+        transition: background-color 0.3s ease;
+        margin-bottom: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 30px;
+        &__info{
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            img{
+                height: 50px;
+            };
+        }
+        &__meta{
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+    }
+}
+.playlist-track:hover{
+   background-color: #5f6061; 
+}
+
+::ng-deep app-home-info{
+    display: none;
+}
